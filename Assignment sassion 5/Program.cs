@@ -18,6 +18,15 @@
             return (sum, difference);
         }
 
+        public static int SumOfDigits(int number)
+        {
+            int sum = 0;
+            while (number != 0)
+            {
+                sum += number % 10; 
+            }
+            return sum;
+        }
         static void Main(string[] args)
         {
 
@@ -30,20 +39,27 @@
             //Console.WriteLine($"Value of a after PassByValue: {B}");
             #endregion
             #region q3  
-            Console.Write("Enter the first number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the first number: ");
+            //int num1 = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter the second number: ");
-            int num2 = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the second number: ");
+            //int num2 = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter the third number: ");
-            int num3 = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the third number: ");
+            //int num3 = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter the fourth number: ");
-            int num4 = int.Parse(Console.ReadLine());
-            var results = Calculate(num1, num2, num3, num4);
-            Console.WriteLine($"Sum of first and second number: {results.sum}");
-            Console.WriteLine($"Difference of third and fourth number: {results.difference}");
+            //Console.Write("Enter the fourth number: ");
+            //int num4 = int.Parse(Console.ReadLine());
+            //var results = Calculate(num1, num2, num3, num4);
+            //Console.WriteLine($"Sum of first and second number: {results.sum}");
+            //Console.WriteLine($"Difference of third and fourth number: {results.difference}");
+            #endregion
+            #region q4
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            int result = SumOfDigits(num);
+            Console.WriteLine($"The sum of the digits of the number {num} is: {result}");
             #endregion
 
         }
