@@ -40,6 +40,22 @@
             }
             return true;
         }
+        public static void MinMaxArray(int[] array, ref int min, ref int max)
+        {
+            if (array.Length == 0)
+                throw new ArgumentException("Array cannot be empty.");
+
+            min = array[0];
+            max = array[0];
+
+            foreach (int number in array)
+            {
+                if (number < min)
+                    min = number;
+                if (number > max)
+                    max = number;
+            }
+        }
         static void Main(string[] args)
         {
 
@@ -75,14 +91,24 @@
             //Console.WriteLine($"The sum of the digits of the number {num} is: {result}");
             #endregion
             #region q5 
-            Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
-            bool isPrime = IsPrime(num);
-            if (isPrime)
-                Console.WriteLine($"{num} is a prime number.");
-            else
-                Console.WriteLine($"{num} is not a prime number.");
+            //Console.Write("Enter a number: ");
+            //int num = int.Parse(Console.ReadLine());
+            //bool isPrime = IsPrime(num);
+            //if (isPrime)
+            //    Console.WriteLine($"{num} is a prime number.");
+            //else
+            //    Console.WriteLine($"{num} is not a prime number.");
             #endregion
+            #region Q6 
+            int[] numbers = { 3, 5, 7, 2, 8, -1, 4, 10, 12 };
+            int min = 0;
+            int max = 0;
+            MinMaxArray(numbers, ref min, ref max);
+            Console.WriteLine($"Minimum value in the array: {min}");
+            Console.WriteLine($"Maximum value in the array: {max}");
+            #endregion
+
+
 
         }
     } 
