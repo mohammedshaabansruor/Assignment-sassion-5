@@ -27,6 +27,19 @@
             }
             return sum;
         }
+        public static bool IsPrime(int number)
+        {
+           
+            if (number < 2)
+                return false;
+
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
+        }
         static void Main(string[] args)
         {
 
@@ -55,11 +68,20 @@
             //Console.WriteLine($"Difference of third and fourth number: {results.difference}");
             #endregion
             #region q4
+            //Console.Write("Enter a number: ");
+            //int num = int.Parse(Console.ReadLine());
+
+            //int result = SumOfDigits(num);
+            //Console.WriteLine($"The sum of the digits of the number {num} is: {result}");
+            #endregion
+            #region q5 
             Console.Write("Enter a number: ");
             int num = int.Parse(Console.ReadLine());
-
-            int result = SumOfDigits(num);
-            Console.WriteLine($"The sum of the digits of the number {num} is: {result}");
+            bool isPrime = IsPrime(num);
+            if (isPrime)
+                Console.WriteLine($"{num} is a prime number.");
+            else
+                Console.WriteLine($"{num} is not a prime number.");
             #endregion
 
         }
